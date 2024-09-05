@@ -1,0 +1,185 @@
+{
+  "orders": {
+    "description": "A list of orders",
+    "filter_types": {
+      "query": "string",
+      "status": "'pending' | 'processing' | 'completed' | 'cancelled'",
+      "payment_status": "'pending' | 'paid' | 'failed'",
+      "delivery_status": "'pending' | 'shipped' | 'delivered' | 'returned'",
+      "date": "string"
+    },
+    "method": "GET",
+    "url": "/orders",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "orders": [
+          {
+            "id": "number",
+            "order_number": "string",
+            "total_items": "number",
+            "order_date": "string",
+            "status": "'Order Received' | 'Dispatched' | 'Fully Picked' | 'cancelled' | 'Pending'",
+            "estimated_delivery_date": "string",
+            "shipping_status": "'pending' | 'in-transit' | 'delivered' | 'returned'"
+          }
+        ],
+        "pagination": "Pagination"
+      }
+    }
+  },
+  "orders/stats": {
+    "description": "Get order statistics",
+    "method": "GET",
+    "url": "/orders/stats",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "total_orders": "number",
+        "total_order_than_prev_week": "number",
+        "active_orders": "number",
+        "this_week_orders": "number",
+        "back_orders": "number",   
+        "total_back_order_revenue": "number" 
+      }
+    }
+  },
+  "orders/export": {
+    "description": "Export orders",
+    "method": "GET",
+    "url": "/orders/export",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "url": "string"
+      }
+    }
+  },
+  "orders/:id": {
+    "description": "Get order by id",
+    "method": "GET",
+    "url": "/orders/:id",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "order": {
+          "id": "number",
+          "order_number": "string",
+          "order_progress": "string",
+          "backorder_items": {
+            "total": "number",
+            "estimated_delivery_date": "string",
+            "items": [
+              {
+                "id": "number",
+                "image": "string",
+                "name": "string",
+                "color": "string",
+                "size": "string",
+                "quantity": "number",
+                "estimated_delivery_date": "string"
+              }
+            ]
+          }, 
+          "order_date": "string",
+          "user": {
+            "id": "number",
+            "name": "string"
+          },
+          "order_type": "string",
+          "payment_status": "'pending' | 'paid' | 'failed'",
+          "total_amount" : "number",
+          "estimated_delivery_date": "string",
+          "shipping_information": [
+            {
+              "id": "number",
+              "name": "string",
+              "tracking_number": "string",              
+              "phase": "picked | dispatched | in-tranist | delivered",
+              "total_quantity": "number",
+              "delivered_estimate": "string",
+              "carrier": "string",
+              "carrier_type": "string",
+              "service_level": "string",
+              "proof_of_delivery": [
+                {
+                  "id": "number",
+                  "url": "string"
+                }
+              ],
+              "items": [
+                {
+                  "id": "number",
+                  "image": "string",
+                  "name": "string",
+                  "color": "string",
+                  "size": "string",
+                  "quantity": "number"
+                }
+              ]
+            }
+          ],
+          "delivery_info":{
+            "name": "string",
+            "address": "string",
+            "method": "string",
+            "phone": "string",
+            "estimated_delivery_date": "string",
+            "warehouse": "string"
+          },
+          "billing_info":{
+            "name": "string",
+            "address": "string",
+            "phone": "string",
+            "method": "string",
+            "warehouse": "string"
+          },
+          "items": [
+            {
+              "id": "number",
+              "image": "string",
+              "name": "string",
+              "sku": "string",
+              "color": "string",
+              "qty" : "number",
+              "shipped": "number",
+              "total_amount": "number",
+              "breakdown": [
+                {
+                  "id": "number",
+                  "size": "string",
+                  "quantity": "number",
+                  "shipped": "number",
+                  "status": "string",
+                  "amount": "number",
+                  "shipping_info": [
+                    {
+                      "id": "number",
+                      "name": "string",
+                      "tracking_number": "string",
+                      "shipped": "number",
+                      "status": "string",
+                      "delivered_estimate": "string",
+                      "amount": "number"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "sub_total": "number",
+          "carriage_cost": "number",
+          "shipping": "number",
+          "discount": "number",
+          "estimate_vat": "number",
+          "total": "number",
+          "inovice_id": "number"
+        }
+      }
+    }
+  }
+}

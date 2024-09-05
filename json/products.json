@@ -1,0 +1,55 @@
+{
+  "description": "A list of products",
+  "filter_types": {
+    "query": "string",
+    "category": "string",
+    "color": "string",
+    "size": "string",
+    "stock": "number",
+    "price": "number"
+  },
+  "response": {
+    "success": "boolean",
+    "message": "string",
+    "payload": {
+      "product": {
+        "id": "string",
+        "name": "string",
+        "sku_code": "string",
+        "slug": "string",
+        "price": {
+          "sale_price": "number",
+          "discount": "number",
+          "rrp": "number",
+          "discount_label": "string"
+        },
+        "color" : "general/color",
+        "image_url": "string",
+        "new": "boolean",
+        "dynamicPrice": {
+          "discount": "number",
+          "discount_type": "'percentage' | 'fixed'",
+          "discounted_price": "number"
+        },
+        "moq": "number",
+        "specs": "string",
+        "vegan": "boolean",
+        "waterproof": "boolean",
+        "metal_free": "boolean",
+        "anti_static": "boolean",
+        "esd": "boolean",
+        "slip_rating": "string",
+        "material": "string",
+        "upper_water_resistant": "boolean",
+        "type": "string",
+        "sole_unit_material": "string",
+        "heat_resistance": "string",
+        "chemical_resistance": "string",
+        "womens_fit": "boolean",
+        "midsole_type": "string",
+        "toecap_type": "string",
+        "weight": "number"
+      }
+    }
+  }
+}

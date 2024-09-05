@@ -1,0 +1,62 @@
+{
+  "comapany": {
+    "v12_id": "string",
+    "name" : "string",
+    "email": "string",
+    "website": "string",
+    "business_registartion_no": "string",
+    "country": "string",
+    "city": "string",
+    "state": "string",
+    "phone": "string"
+  },
+  "system": {
+    "timezone": "string",
+    "time_format": "string",
+    "date_format": "string",
+    "currency": "string",
+    "shoe_country_size": "string"
+  },
+  "account": {
+    "shipping_address": [{
+      "title": "string",
+      "company_name": "string",
+      "address": "string",
+      "country": "string",
+      "state": "string",
+      "city": "string",
+      "phone": "string",
+      "same_as_billing": "boolean",
+      "is_default": "boolean"
+    }],
+    "billing_address": [{
+      "title": "string",
+      "company_name": "string",
+      "address": "string",
+      "country": "string",
+      "state": "string",
+      "city": "string",
+      "phone": "string",
+      "same_as_shipping": "boolean",
+      "is_default": "boolean"
+    }],
+    "notification": {
+      "imp_email": "boolean",
+      "promotion_email": "boolean",
+      "order_status": "boolean",
+      "backorders": "boolean",
+      "new_inovoices": "boolean",
+      "invoice_due_date": "boolean"
+    }
+  },
+  "personal": {
+    "image": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "email": "string",
+    "phone": "string",
+    "password": "string",
+    "confirm_password": "string",
+    "profile_picture": "string"
+  }
+}

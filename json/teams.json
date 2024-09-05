@@ -1,0 +1,124 @@
+{
+  "teams": {
+    "description": "Get all team list with pagination and filter",
+    "filter_types": {
+      "query" : "string",
+      "team" : "string",
+      "admin":"'active' | 'inactive' | 'invite-pending'",
+      "date": "'admin' | 'member'"
+    },
+    "method": "GET",
+    "url": "/teams",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "teams": [
+          {
+            "id": "number",
+            "name": "string",
+            "members": [
+              { 
+                "id": "number",
+                "image": "string | null",
+                "name": "string"
+              }
+            ],
+            "description": "string",
+            "updated_at": "string"
+          }
+        ]
+      },
+      "pagination": {
+        "total": "number",
+        "per_page": "number",
+        "current_page": "number",
+        "total_pages": "number"
+      }
+    }
+  },
+  "teams/create": {
+    "description": "Create new team",
+    "method": "POST",
+    "url": "/teams",
+    "payload": {
+      "name": "string",
+      "description": "string",
+      "members": [
+        {
+          "id": "number",
+          "first_name": "string",
+          "last_name": "string",
+          "email": "string"
+        }
+      ]
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "teams/[id]": {
+    "description": "Get team detail by id",
+    "method": "GET",
+    "url": "/teams/[id]",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "id": "number",
+        "name" : "string",
+        "description": "string",
+        "members": [
+          {
+            "id": "number",
+            "image": "string | null",
+            "name": "string"
+          }
+        ]
+      }
+    }
+  },
+  "teams/[id][update]": {
+    "description": "Update team detail by id",
+    "method": "PUT",
+    "url": "/teams/[id]",
+    "payload": {
+      "name": "string",
+      "description": "string",
+      "members": [
+        {
+          "id": "number",
+          "first_name": "string",
+          "last_name": "string",
+          "email": "string"
+        }
+      ]
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "teams/[id][delete]": {
+    "description": "Delete team by id",
+    "method": "DELETE",
+    "url": "/teams/[id]",
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "teams/bulk/delete": {
+    "description": "Delete multiple teams"   ,
+    "method": "DELETE",
+    "url": "/teams/bulk/delete",
+    "payload": {
+      "teams": [ "number" ]  
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string" 
+    }
+  }
+}

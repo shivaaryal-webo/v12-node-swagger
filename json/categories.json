@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "id": "number",
+      "name": "string",
+      "slug": "string",
+      "sub_categories": [ 
+        {
+          "id": "number",
+          "slug": "string",
+          "name": "string",
+          "description": "string",
+          "image": "string | null",
+          "total_products": "number",
+          "new_tag": "boolean"
+        }
+      ]
+    }
+  ],
+  "sub_categories": [
+    {
+      "id": "number",
+      "slug": "string",
+      "name": "string",
+      "description": "string",
+      "image": "string | null",
+      "total_products": "number",
+      "new_tag": "boolean",
+      "category": {
+        "id": "number",
+        "name": "string",
+        "slug": "string"
+      }
+    }
+  ]
+}

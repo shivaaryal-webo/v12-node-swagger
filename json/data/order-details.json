@@ -1,0 +1,121 @@
+{
+  "id": "1",
+  "order_number": "72904",
+  "order_progress": "processing",
+  "backorder_items": {
+    "total": "18",
+    "estimated_delivery_date": "14 Mar, 2024",
+    "items": [
+      {
+        "id": "1",
+        "image": "https://via.placeholder.com/150",
+        "name": "V2130",
+        "color": "Midnight Black",
+        "size": "7",
+        "quantity": "4",
+        "estimated_delivery_date": "14 Mar, 2024"
+      },
+      {
+        "id": "2",
+        "image": "https://via.placeholder.com/150",
+        "name": "V2125",
+        "color": "Midnight Black",
+        "size": "8",
+        "quantity": "2",
+        "estimated_delivery_date": "14 Mar, 2024"
+      }
+    ]
+  }, 
+  "order_date": "23 May, 2024",
+  "user": {
+    "id": "1",
+    "name": "John Doe"
+  },
+  "order_type": "online",
+  "payment_status": "'paid",
+  "total_amount" : "11999.04",
+  "estimated_delivery_date": "30 May, 2024",
+  "delivery_info":{
+    "name": "Shawn Bradley",
+    "address": "25 Link Rd, Newstead EC50 9AU",
+    "method": "Standard Shipping",
+    "phone": "+44 2071234567",
+    "estimated_delivery_date": "05 April, 2024",
+    "warehouse": "Manchester Seaport, Warehouse"
+  },
+  "shipping_information": [
+    {
+      "id": "1",
+      "name": "UPS Express",
+      "tracking_number": "FBA171BPWMZT",              
+      "phase": "picked",
+      "total_quantity": "18",
+      "delivered_estimate": "16 Mar, 2024",
+      "carrier": "ANNU",
+      "carrier_type": "LCL",
+      "service_level": "Standard",
+      "proof_of_delivery": [
+        {
+          "id": "1",
+          "url": "https://via.placeholder.com/150"
+        }
+      ],
+      "items": [
+        {
+          "id": "1",
+          "image": "https://via.placeholder.com/150",
+          "name": "V2130",
+          "color": "Midnight Black",
+          "size": "7",
+          "quantity": "48"
+        }
+      ]
+    }
+  ],
+  "billing_info":{
+    "name": "Shawn Bradley",
+    "address": "25 Link Rd, Newstead EC50 9AU",
+    "phone": "+44 2071234567",
+    "method": "Credit Purchase",
+    "warehouse": "Manchester Seaport, Warehouse"
+  },
+  "items": [
+    {
+      "id": "1",
+      "image": "https://via.placeholder.com/150",
+      "name": "V2180 Invincible IGS",
+      "sku": "V2180",
+      "color": "Ash Grey",
+      "color_coed": "#F0F0F0",
+      "quantity" : "56",
+      "shipped": "20",
+      "total_amount": "2324.99",
+      "size_breakdown": [
+        {
+          "id": "1",
+          "size": "7",
+          "quantity": "24",
+          "shipped": "10",
+          "status": "Dispatched",
+          "amount": "1538.3",
+          "shipping_breakdown": [
+            {
+              "id": "1",
+              "name": "UPS Express",
+              "tracking_number": "FBA171BPWMZT",
+              "shipped": "50",
+              "status": "Delivered",
+              "delivered_estimate": "5 Jun, 2024",
+              "amount": "1538.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sub_total": "11744.49",
+  "shipping_cost": "332.65",
+  "shipping_discount": "332.65",
+  "estimate_vat": "254.55",
+  "total": "11999.04"
+}

@@ -1,0 +1,102 @@
+{
+  "invoices": {
+    "description": "A list of invoices",
+    "filter_types": {
+      "query": "string",
+      "status": "'pending' | 'processing' | 'completed' | 'cancelled'",
+      "payment_status": "'pending' | 'paid' | 'failed'",
+      "delivery_status": "'pending' | 'shipped' | 'delivered' | 'returned'",
+      "date": "string"
+    },
+    "method": "GET",
+    "url": "/invoices",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "invoices": [
+          {
+            "id": "number",
+            "inovice_number": "string",
+            "inovice_date": "string",
+            "due_date": "string",
+            "order_id": "string",
+            "total_amount": "number",
+            "status": "string",
+            "paid_date": "string",
+            "inovice_type": "string"
+          }
+        ],
+        "pagination": "Pagination"
+      }
+    }
+  },
+  "inovices/stats": {
+    "description": "Get order statistics",
+    "method": "GET",
+    "url": "/inovices/stats",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "total_inovices": "number",
+        "total_overdue": "number",
+        "total_due_on_next_30_days": "number",
+        "available_credit": "number",
+        "available_credit_than_last_week": "number",
+        "credit_spend": "number",
+        "remaining_credit": "number" 
+      }
+    }
+  },
+  "inovices/export": {
+    "description": "Export inovices",
+    "method": "GET",
+    "url": "/inovices/export",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "url": "string"
+      }
+    }
+  },
+  "inovices/:id": {
+    "description": "Get invoice by id",
+    "method": "GET",
+    "url": "/invoices/:id",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "invoice": {
+          "invoice_number": "string (invoice id)",
+          "invoice_status": "string",
+          "invoice_date": "string",
+          "invoice_due_date": "string",
+          "order_number": "string",
+          "sub_total": "number",
+          "carriage_cost": "number",
+          "estimate_vat": "number",
+          "grand_total": "number",
+          "invoice_to": {
+            "name": "string",
+            "company": "string",
+            "address": "string",
+            "city": "string",
+            "country": "string",
+            "code": "string"
+          },
+          "deliver_to": {
+            "name": "string",
+            "company": "string",
+            "address": "string",
+            "city": "string",
+            "country": "string",
+            "code": "string"
+          }                    
+        }
+      }
+    }
+  }
+}

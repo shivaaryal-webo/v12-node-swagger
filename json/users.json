@@ -1,0 +1,168 @@
+{
+  "users": {
+    "description": "Get all users list with pagination and filter",
+    "filter_types": {
+      "query" : "string",
+      "team" : "string",
+      "status":"'active' | 'inactive' | 'invite-pending'",
+      "role": "'admin' | 'member'"
+    },
+    "method": "GET",
+    "url": "/users",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "users": [
+          {
+            "id": "number",
+            "first_name": "string",
+            "last_name": "string",
+            "email": "string",
+            "phone_number": "number",
+            "team": "string[]",
+            "designation": "string",
+            "status": "'active' | 'inactive' | 'invite-pending'",
+            "role": "'admin' | 'member'",
+            "created_at": "string",
+            "updated_at": "string"
+          }
+        ]
+      },
+      "pagination": "Pagination"
+    }
+  },
+  "users/create": {
+    "description": "Create new users in bulk",
+    "method": "POST",
+    "url": "/users",
+    "payload": {
+      "users": [
+        {
+          "email": "string",
+          "role": "string",
+          "team": "string[] | null"
+        }
+      ]
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "users/[id]": {
+    "description": "Get user detail by id",
+    "method": "GET",
+    "url": "/users/[id]",
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "id": "number",
+        "image" : "string",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone_number": "number",
+        "designation": "string",
+        "role": "string",
+        "team": "string[]",
+        "status": "'active' | 'inactive' | 'invite-pending'",
+        "is2FAEnabled": "boolean"
+      }
+    }
+  },
+  "users/[id][update]": {
+    "description": "Update user detail by id",
+    "method": "PUT",
+    "url": "/users/[id]",
+    "payload": {
+      "role": "string",
+      "email": "string",
+      "team": "string[]",
+      "phone_number": "number",
+      "first_name": "string",
+      "last_name": "string",
+      "designation": "string",
+      "image" : "string",
+      "is2FAEnabled": "boolean",
+      "status": "'active' | 'inactive' | 'invite-pending'"
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "users/[id][delete]": {
+    "method": "DELETE",
+    "url": "/users/[id]",
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "users/bulk/change-status": {
+    "description": "Update multiple users"   ,
+    "method": "PUT",
+    "url": "/users/bulk/update",
+    "payload": {
+      "users": [ "number" ],
+      "status": "'active' | 'inactive'"
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "users/bulk/delete": {
+    "description": "Delete multiple users"   ,
+    "method": "DELETE",
+    "url": "/users/bulk/delete",
+    "payload": {
+      "users": [ "number" ]  
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "users/bulk/export": {
+    "description": "Export selected users in CSV format",
+    "method": "GET",
+    "url": "/users/bulk/export",
+    "payload":{
+      "users" : [ "number" ]
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string",
+      "payload": {
+        "url": "string"
+      }
+    }
+  },
+  "users/bulk/2fa": {
+    "description": "Send instruction to enable 2FA for multiple users",
+    "method": "POST",
+    "url": "/users/bulk/2fa",
+    "payload": {
+      "users": [ "number" ]
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  },
+  "users/bulk/password-reset": {
+    "description": "Reset password for multiple users",
+    "method": "POST",
+    "url": "/users/bulk/password-reset",
+    "payload": {
+      "users": [ "number" ]
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  }
+}
