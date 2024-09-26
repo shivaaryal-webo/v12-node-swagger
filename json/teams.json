@@ -3,9 +3,11 @@
     "description": "Get all team list with pagination and filter",
     "filter_types": {
       "search" : "string",
-      "teamName" : ["string"],
+      "name" : ["string"],
       "roles":["active", "inactive", "invite-pending"],
-      "date": "string | date"
+      "date": "string | date",
+      "sortBy": "name | members",
+      "orderBy": "asc | desc" 
     },
     "method": "GET",
     "url": "/teams",
