@@ -2,10 +2,10 @@
   "teams": {
     "description": "Get all team list with pagination and filter",
     "filter_types": {
-      "query" : "string",
-      "team" : "string",
-      "admin":"'active' | 'inactive' | 'invite-pending'",
-      "date": "'admin' | 'member'"
+      "search" : "string",
+      "teamName" : ["string"],
+      "roles":["active", "inactive", "invite-pending"],
+      "date": "string | date"
     },
     "method": "GET",
     "url": "/teams",
